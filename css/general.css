@@ -1,0 +1,213 @@
+/* ============================================================ ESTILOS GENERALES ============================================================ */
+* {
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina rellenos por defecto */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+html {
+    scroll-behavior: smooth; /* Permite un desplazamiento suave al usar anclas */
+}
+
+body {
+    /* Noche en la Selva / Modo Oscuro */
+    background-color: #0F1215;
+    font-family: 'Verdana', sans-serif; /* Tipografía principal */
+    color: #CBD5E0; /* Texto gris plateado para legibilidad */
+    line-height: 1.6; /* Espaciado entre líneas para mejorar lectura */
+}
+
+/* ============================================================ COMPONENTES REUTILIZABLES (HERO Y CAJAS) ============================================================ */
+
+.encabezado-hero {
+    height: 450px; /* Altura de la sección principal */
+    background-size: cover; /* La imagen cubre todo el contenedor */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se duplique */
+    background-attachment: fixed; /* Efecto Parallax (la imagen queda fija al scrollear) */
+    display: flex;
+}
+
+.filtro-pantalla {
+    /* Gradiente místico que oscurece la imagen para que el texto sea legible */
+    background: linear-gradient(rgba(0,0,0,0.9), rgba(0, 50, 60, 0.7));
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+.filtro-pantalla h1 {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+    margin-bottom: 10px;
+}
+
+.subtitulo-portada {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #00F5FF; /* Cyan Neón místico */
+}
+
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 25px;
+}
+
+main p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+/* Cajas donde van las historias */
+.caja-contenido {
+    background-color: #1A1F24; /* Gris carbón */
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-left: 5px solid #00F5FF; /* Acento Neón */
+}
+
+/* Versión especial para cajas de énfasis */
+.caja-especial {
+    background-color: #1A1F24;
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    border-right: 5px solid #10B981; /* Verde esmeralda selva */
+}
+
+.caja-contenido h2, .caja-contenido h3 {
+    color: #00F5FF; 
+    margin-bottom: 20px;
+    border-bottom: 1px solid #2D3748;
+    padding-bottom: 5px;
+}
+
+/* ============================================================ SECCIÓN DE BANDERAS (EL MENÚ) ============================================================ */
+
+.seccion-paises {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.grid-paises {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tarjeta-pais {
+    width: 200px;
+    background-color: #1A1F24;
+    padding: 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #2D3748;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.tarjeta-pais img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+    transition: 0.4s;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.1));
+}
+
+.tarjeta-pais span {
+    font-weight: bold;
+    color: #CBD5E0;
+    font-size: 1.1rem;
+}
+
+/* EFECTO AL PASAR EL MOUSE (Hover Radical) */
+.tarjeta-pais:hover {
+    transform: translateY(-12px);
+    background-color: #00F5FF; /* Se ilumina en Cyan */
+    box-shadow: 0 0 30px rgba(0, 245, 255, 0.6);
+    border-color: #ffffff;
+}
+
+.tarjeta-pais:hover span {
+    color: #0F1215; /* Texto oscuro para contraste sobre Cyan */
+}
+
+.tarjeta-pais:hover img {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(0,0,0,0.3));
+}
+
+/* ============================================================ RUTAS DE IMÁGENES (LOCALES) ============================================================ */
+
+.fondo-index     { background-image: url('../img/fondos/portada.jpg'); }
+.fondo-guatemala { background-image: url('../img/fondos/guatemala.jpg'); }
+.fondo-salvador  { background-image: url('../img/fondos/salvador.jpg'); }
+.fondo-honduras  { background-image: url('../img/fondos/honduras.jpg'); }
+.fondo-nicaragua { background-image: url('../img/fondos/nicaragua.jpg'); }
+.fondo-costarica { background-image: url('../img/fondos/costarica.jpg'); }
+.fondo-panama    { background-image: url('../img/fondos/panama.jpg'); }
+.fondo-belice    { background-image: url('../img/fondos/belice.jpg'); }
+
+/* ============================================================ FOOTER Y BOTONES ============================================================ */
+
+footer {
+    background-color: #000000;
+    color: #00F5FF;
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+    font-size: 0.9rem;
+    border-top: 1px solid #2D3748; /* Línea sutil de separación */
+}
+
+.boton-explorar, .boton-volver {
+    display: inline-block;
+    background-color: #10B981; /* Verde esmeralda para acción */
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Quita el subrayado */
+    font-weight: bold;
+    transition: all 0.3s ease; /* Transición suave para el hover */
+    margin-top: 15px;
+    border: 1px solid transparent;
+}
+
+.boton-explorar:hover, .boton-volver:hover {
+    background-color: #059669;
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+.boton-inicio {
+    display: inline-block;
+    background-color: #2D3748; 
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Transición suave para el botón de inicio */
+}
+
+.boton-inicio:hover {
+    background-color: #4A5568;
+    transform: translateY(-3px);
+}

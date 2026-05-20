@@ -1,0 +1,68 @@
+/* ========================================== SECCIÓN DE TARJETAS (NIVEL 2) ========================================== */
+
+.contenedor-leyendas-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas bajen si no caben en una línea */
+    justify-content: center; /* Centra las tarjetas */
+    gap: 25px; /* Espaciado entre tarjetas */
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.card_link {
+    text-decoration: none; /* Elimina estilos de enlace en las tarjetas */
+    color: inherit;
+    display: inline-block;
+}
+
+/* Estructura Base de la Tarjeta */
+.card {
+    background: #1e252d; 
+    text-align: center;
+    width: 280px; /* Ancho fijo */
+    height: 420px; /* Altura fija para uniformidad */
+    padding: 25px 15px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.6); /* Sombra para dar profundidad */
+    border-radius: 12px;
+    transition: all 0.4s ease; /* Suaviza el efecto hover */
+    border: 1px solid #2D3748;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Variaciones de Colores */
+.red_card { background: #3a1a1a; border-color: #f86; }
+.green_card { background: #1a2e23; border-color: #5b7; }
+.gold_card { background: #2e2614; border-color: #ffcc00; }
+.purple_card { background: #221a33; border-color: #a855f7; }
+
+/* Efectos al pasar el mouse (Brillo y Elevación) */
+.card:hover { transform: translateY(-10px); cursor: pointer; border-color: #00F5FF; box-shadow: 0 0 25px rgba(0, 245, 255, 0.4); }
+.red_card:hover { border-color: #f86; box-shadow: 0 0 25px rgba(248, 102, 102, 0.4); }
+.green_card:hover { border-color: #5b7; box-shadow: 0 0 25px rgba(91, 183, 110, 0.4); }
+.gold_card:hover { border-color: #ffcc00; box-shadow: 0 0 25px rgba(255, 204, 0, 0.4); }
+.purple_card:hover { border-color: #a855f7; box-shadow: 0 0 25px rgba(168, 85, 247, 0.4); }
+
+/* Estilos internos de la tarjeta */
+.card_img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%; /* Imagen circular */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    border: 3px solid rgba(255,255,255,0.1);
+    transition: all 0.4s ease; 
+    margin-bottom: 15px;
+}
+
+.card:hover .card_img { transform: scale(1.1); border-color: #00F5FF; }
+.red_card:hover .card_img { border-color: #f86; }
+.green_card:hover .card_img { border-color: #5b7; }
+.gold_card:hover .card_img { border-color: #ffcc00; }
+.purple_card:hover .card_img { border-color: #a855f7; }
+
+.card_title { font-size: 20px; margin: 5px 0; color: #fff; text-transform: uppercase; }
+.card_subtitle { font-size: 11px; letter-spacing: 2px; margin-bottom: 15px; }
+.card_content { font-size: 13px; padding: 0 10px; text-align: center; color: #CBD5E0; line-height: 1.5; overflow: hidden; } 
+/* "overflow: hidden;" oculta cualquier contenido de un elemento que se desborde o sobresalga de sus 
+    límites definidos (ancho o alto), recortándolo exactamente en el borde del contenedor*/
