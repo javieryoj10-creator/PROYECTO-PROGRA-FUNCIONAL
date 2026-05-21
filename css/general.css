@@ -213,3 +213,59 @@ footer {
     background-color: #4A5568;
     transform: translateY(-3px);
 }
+
+/* ========================================== 1. ESTILOS BASE (Mobile First) Sugerencia: Diseña aquí cómo se verá en celulares (Androids pequeños, iPhones SE, etc.) ========================================== */
+.caja-detalle {
+    display: flex;
+    flex-direction: column; /* En celular, todo va hacia abajo */
+    text-align: left;
+}
+
+.img-historia {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.texto-historia {
+    border-left: 4px solid #00F5FF;
+    border-right: none;
+    padding: 0 0 0 20px;
+    text-align: left;
+}
+
+
+/* ==========================================
+    2. TABLETS (Pantallas medianas - desde 600px) Modelos: iPads, Galaxy Tabs, etc. ========================================== */
+    @media (min-width: 600px) {
+    /* Aquí puedes empezar a poner elementos uno al lado del otro si quieres */
+    }
+
+
+/* ========================================== 3. LAPTOPS Y PANTALLAS NORMALES (desde 992px) Aquí es donde el diseño "zigzag" suele brillar ========================================== */
+@media (min-width: 992px) {
+    .caja-detalle {
+    flex-direction: row; /* Imagen y texto lado a lado */
+    }
+    
+  /* Aquí reactivas el zigzag para pantallas grandes */
+    .seccion-historia:nth-of-type(even) .caja-detalle {
+    flex-direction: row-reverse; 
+    }
+    
+    .seccion-historia:nth-of-type(even) .texto-historia {
+    border-left: none;
+    border-right: 4px solid #00F5FF;
+    padding: 0 20px 0 0;
+    text-align: right;
+    }
+}
+
+
+ /* ========================================== 4. MONITORES GRANDES / ESCRITORIO (desde 1200px) Para que tu web no se estire infinitamente y se vea deforme========================================== */
+    @media (min-width: 1200px) {
+    .contenedor-padre-de-tu-web {
+    max-width: 1200px;
+    margin: 0 auto; /* Centra toda tu página en pantallas gigantes */
+    }
+}
