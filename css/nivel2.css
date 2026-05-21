@@ -19,12 +19,14 @@
 .card {
     background: #1e252d; 
     text-align: center;
-    width: 280px; /* Ancho fijo */
-    height: 420px; /* Altura fija para uniformidad */
+    width: 100%; /* Fluido en móviles */
+    max-width: 280px; /* Límite de diseño original */
+    height: auto; /* Cambiado a auto para evitar que el texto se desborde si el contenido varía */
+    min-height: 420px; /* Mantiene la uniformidad visual sin romper el diseño */
     padding: 25px 15px;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.6); /* Sombra para dar profundidad */
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.6); 
     border-radius: 12px;
-    transition: all 0.4s ease; /* Suaviza el efecto hover */
+    transition: all 0.4s ease; 
     border: 1px solid #2D3748;
     display: flex;
     flex-direction: column;

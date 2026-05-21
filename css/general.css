@@ -102,7 +102,7 @@ main p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 20px; /* Reducido ligeramente para pantallas pequeñas */
     margin-top: 40px;
     max-width: 1000px;
     margin-left: auto;
@@ -110,7 +110,8 @@ main p {
 }
 
 .tarjeta-pais {
-    width: 200px;
+    width: 100%; /* Ocupa el ancho disponible... */
+    max-width: 200px; /* ...pero nunca supera los 200px */
     background-color: #1A1F24;
     padding: 25px;
     border-radius: 10px;
@@ -123,35 +124,17 @@ main p {
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
-.tarjeta-pais img {
-    width: 80px;
-    height: auto;
-    margin-bottom: 15px;
-    transition: 0.4s;
-    filter: drop-shadow(0 0 5px rgba(255,255,255,0.1));
-}
-
-.tarjeta-pais span {
-    font-weight: bold;
-    color: #CBD5E0;
-    font-size: 1.1rem;
-}
-
-/* EFECTO AL PASAR EL MOUSE (Hover Radical) */
-.tarjeta-pais:hover {
-    transform: translateY(-12px);
-    background-color: #00F5FF; /* Se ilumina en Cyan */
-    box-shadow: 0 0 30px rgba(0, 245, 255, 0.6);
-    border-color: #ffffff;
-}
-
-.tarjeta-pais:hover span {
-    color: #0F1215; /* Texto oscuro para contraste sobre Cyan */
-}
-
-.tarjeta-pais:hover img {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 8px rgba(0,0,0,0.3));
+/* Reducir el tamaño de fuente en el Hero para pantallas móviles */
+@media (max-width: 480px) {
+    .filtro-pantalla h1 {
+        font-size: 2.2rem; /* Evita que el título se corte en iPhones/Samsung mini */
+    }
+    .subtitulo-portada {
+        font-size: 1rem;
+    }
+    .caja-contenido, .caja-especial {
+        padding: 20px; /* Más espacio útil para el texto en móviles */
+    }
 }
 
 /* ============================================================ RUTAS DE IMÁGENES (LOCALES) ============================================================ */
@@ -212,60 +195,4 @@ footer {
 .boton-inicio:hover {
     background-color: #4A5568;
     transform: translateY(-3px);
-}
-
-/* ========================================== 1. ESTILOS BASE (Mobile First) Sugerencia: Diseña aquí cómo se verá en celulares (Androids pequeños, iPhones SE, etc.) ========================================== */
-.caja-detalle {
-    display: flex;
-    flex-direction: column; /* En celular, todo va hacia abajo */
-    text-align: left;
-}
-
-.img-historia {
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 20px;
-}
-
-.texto-historia {
-    border-left: 4px solid #00F5FF;
-    border-right: none;
-    padding: 0 0 0 20px;
-    text-align: left;
-}
-
-
-/* ==========================================
-    2. TABLETS (Pantallas medianas - desde 600px) Modelos: iPads, Galaxy Tabs, etc. ========================================== */
-    @media (min-width: 600px) {
-    /* Aquí puedes empezar a poner elementos uno al lado del otro si quieres */
-    }
-
-
-/* ========================================== 3. LAPTOPS Y PANTALLAS NORMALES (desde 992px) Aquí es donde el diseño "zigzag" suele brillar ========================================== */
-@media (min-width: 992px) {
-    .caja-detalle {
-    flex-direction: row; /* Imagen y texto lado a lado */
-    }
-    
-  /* Aquí reactivas el zigzag para pantallas grandes */
-    .seccion-historia:nth-of-type(even) .caja-detalle {
-    flex-direction: row-reverse; 
-    }
-    
-    .seccion-historia:nth-of-type(even) .texto-historia {
-    border-left: none;
-    border-right: 4px solid #00F5FF;
-    padding: 0 20px 0 0;
-    text-align: right;
-    }
-}
-
-
- /* ========================================== 4. MONITORES GRANDES / ESCRITORIO (desde 1200px) Para que tu web no se estire infinitamente y se vea deforme========================================== */
-    @media (min-width: 1200px) {
-    .contenedor-padre-de-tu-web {
-    max-width: 1200px;
-    margin: 0 auto; /* Centra toda tu página en pantallas gigantes */
-    }
 }

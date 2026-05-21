@@ -125,3 +125,85 @@
     border-top: 2px solid #1A1F24; 
     padding-top: 30px; 
 }
+
+@media (max-width: 768px) { /* Apila imagen y texto verticalmente y alinea a la izquierda */
+    .caja-detalle, .seccion-historia:nth-of-type(even) .caja-detalle { 
+        flex-direction: column; 
+        text-align: left; 
+    }
+
+    /* Imagen: ancho fluido, máximo 300px y margen inferior */
+    .img-historia { 
+        width: 100%; 
+        max-width: 300px; 
+        margin-bottom: 20px; 
+    }
+
+    /* Texto: unifica bordes y alineación (quita efecto zigzag) */
+    .texto-historia, .seccion-historia:nth-of-type(even) .texto-historia { 
+        border-right: none; 
+        border-left: 4px solid #00F5FF; 
+        padding: 0 0 0 20px; 
+        text-align: left; 
+    }
+}
+
+/* ========================================== RESPONSIVE MULTIDISPOSITIVO ========================================== */
+
+@media (max-width: 768px) { 
+    /* Menú interno adaptable */
+    .nav-interna {
+        padding: 10px 0;
+    }
+    .nav-interna ul {
+        gap: 10px; /* Reduce espacio entre enlaces en pantallas medianas */
+    }
+    .nav-interna a {
+        font-size: 0.8rem;
+    }
+
+    /* Apila imagen y texto verticalmente y alinea a la izquierda */
+    .caja-detalle, .seccion-historia:nth-of-type(even) .caja-detalle { 
+        flex-direction: column; 
+        text-align: left; 
+        gap: 20px;
+    }
+
+    /* Imagen: centrada y fluida */
+    .img-historia { 
+        width: 200px; 
+        height: 200px; /* Mantiene la proporción cuadrada */
+        margin: 0 auto 10px auto; 
+    }
+
+    /* Texto: unifica bordes y alineación (quita efecto zigzag) */
+    .texto-historia, .seccion-historia:nth-of-type(even) .texto-historia { 
+        border-right: none; 
+        border-left: 4px solid #00F5FF; 
+        padding: 0 0 0 20px; 
+        text-align: left; 
+    }
+    
+    .texto-historia p {
+        text-align: left; /* En pantallas pequeñas, el justificado deja huecos feos */
+    }
+
+    /* Navegación inferior en móviles */
+    .navegacion-historias {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 414px) { /* Optimización estricta para teléfonos pequeños/medianos */
+    .nav-interna ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Crea una cuadrícula de 2 columnas para los links */
+        text-align: center;
+        gap: 8px;
+    }
+    .seccion-historia h2 {
+        font-size: 1.6rem;
+    }
+}
