@@ -102,7 +102,7 @@ main p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Reducido ligeramente para pantallas pequeñas */
+    gap: 25px; /* Espaciado equilibrado entre las tarjetas */
     margin-top: 40px;
     max-width: 1000px;
     margin-left: auto;
@@ -110,8 +110,9 @@ main p {
 }
 
 .tarjeta-pais {
-    width: 100%; /* Ocupa el ancho disponible... */
-    max-width: 200px; /* ...pero nunca supera los 200px */
+    /* SOLUCIÓN: Volvemos al tamaño fijo cuadrado para PC, pero elástico para móvil */
+    flex: 0 1 200px;
+    width: 200px; 
     background-color: #1A1F24;
     padding: 25px;
     border-radius: 10px;
@@ -124,16 +125,64 @@ main p {
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
-/* Reducir el tamaño de fuente en el Hero para pantallas móviles */
+.tarjeta-pais img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+    transition: 0.4s;
+}
+
+.tarjeta-pais span {
+    font-weight: bold;
+    color: #CBD5E0;
+    font-size: 1.1rem;
+}
+
+/* EFECTO HOVER */
+.tarjeta-pais:hover {
+    transform: translateY(-12px);
+    background-color: #00F5FF; 
+    box-shadow: 0 0 30px rgba(0, 245, 255, 0.6);
+    border-color: #ffffff;
+}
+
+.tarjeta-pais:hover span {
+    color: #0F1215; 
+}
+
+.tarjeta-pais:hover img {
+    transform: scale(1.1);
+}
+
+/* ========================================== RESPONSIVE GENERAL ========================================== */
+@media (max-width: 768px) {
+    .encabezado-hero {
+        background-attachment: scroll; /* Desactiva parallax en móviles para evitar tirones de rendimiento */
+        height: 350px;
+    }
+}
+
 @media (max-width: 480px) {
     .filtro-pantalla h1 {
-        font-size: 2.2rem; /* Evita que el título se corte en iPhones/Samsung mini */
+        font-size: 2.2rem; /* Evita que el título se corte en pantallas chicas */
     }
     .subtitulo-portada {
         font-size: 1rem;
     }
     .caja-contenido, .caja-especial {
         padding: 20px; /* Más espacio útil para el texto en móviles */
+    }
+    /* En teléfonos delgados, reducimos ligeramente el tamaño para que quepan ordenadas */
+    .tarjeta-pais {
+        flex: 0 1 160px;
+        width: 160px;
+        padding: 15px;
+    }
+    .tarjeta-pais img {
+        width: 60px;
+    }
+    .tarjeta-pais span {
+        font-size: 0.95rem;
     }
 }
 
@@ -157,18 +206,18 @@ footer {
     padding: 30px;
     margin-top: 60px;
     font-size: 0.9rem;
-    border-top: 1px solid #2D3748; /* Línea sutil de separación */
+    border-top: 1px solid #2D3748; 
 }
 
 .boton-explorar, .boton-volver{
     display: inline-block;
-    background-color: #10B981; /* Verde esmeralda para acción */
+    background-color: #10B981; 
     color: white;
     padding: 12px 30px;
-    border-radius: 5px; /* Bordes redondeados */
-    text-decoration: none; /* Quita el subrayado */
+    border-radius: 5px; 
+    text-decoration: none; 
     font-weight: bold;
-    transition: all 0.3s ease; /* Transición suave para el hover */
+    transition: all 0.3s ease; 
     margin-top: 15px;
     border: 1px solid transparent;
 }
@@ -184,10 +233,10 @@ footer {
     background-color: #2D3748;
     color: white;
     padding: 12px 30px;
-    border-radius: 5px; /* Bordes redondeados */
-    text-decoration: none; /* Quita el subrayado */
+    border-radius: 5px; 
+    text-decoration: none; 
     font-weight: bold;
-    transition: all 0.3s ease; /* Transición suave para el hover */
+    transition: all 0.3s ease; 
     margin-top: 15px;
     border: 1px solid transparent;  
 }

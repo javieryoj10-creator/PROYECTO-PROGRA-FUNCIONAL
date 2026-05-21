@@ -13,6 +13,8 @@
     text-decoration: none; /* Elimina estilos de enlace en las tarjetas */
     color: inherit;
     display: inline-block;
+    width: 100%;
+    max-width: 280px; /* Asegura que el enlace no se desborde */
 }
 
 /* Estructura Base de la Tarjeta */
@@ -65,6 +67,4 @@
 
 .card_title { font-size: 20px; margin: 5px 0; color: #fff; text-transform: uppercase; }
 .card_subtitle { font-size: 11px; letter-spacing: 2px; margin-bottom: 15px; }
-.card_content { font-size: 13px; padding: 0 10px; text-align: center; color: #CBD5E0; line-height: 1.5; overflow: hidden; } 
-/* "overflow: hidden;" oculta cualquier contenido de un elemento que se desborde o sobresalga de sus 
-    límites definidos (ancho o alto), recortándolo exactamente en el borde del contenedor*/
+.card_content { font-size: 13px; padding: 0 10px; text-align: center; color: #CBD5E0; line-height: 1.5; overflow: hidden; }

@@ -28,7 +28,8 @@
 
 .nav-interna a:hover { 
     color: #ffffff; 
-    text-shadow: 0 0 10px rgba(0, 245, 255, 0.5); } /* Efecto de brillo neón */
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.5); 
+} 
 
 .seccion-historia { 
     padding-top: 50px; /* Evita que el menú pegajoso cubra el título */
@@ -60,7 +61,7 @@
     transform: scale(1.05); 
     border-color: #00F5FF; 
     box-shadow: 0 0 20px rgba(0, 245, 255, 0.4); 
-    cursor: pointer; /* Cambiar la apariencia del puntero del ratón a una mano pequeña apuntando (puntero) */
+    cursor: pointer; 
 }
 
 .texto-historia { 
@@ -69,14 +70,13 @@
     padding-left: 25px; 
 }
 
-.seccion-historia:nth-of-type(even) .texto-historia { /* Sirve para seleccionar y aplicar estilos exclusivamente a las secciones pares (2ª, 4ª, 6ª, etc.) */
+.seccion-historia:nth-of-type(even) .texto-historia { 
     border-left: none; 
     border-right: 4px solid #00F5FF; 
     padding-left: 0; 
     padding-right: 25px; 
     text-align: right; 
 }
-
 
 .texto-historia p { 
     text-align: justify; 
@@ -92,8 +92,7 @@
 
 .navegacion-historias { 
     display: flex; 
-    justify-content: 
-    space-between; 
+    justify-content: space-between; 
     align-items: center; 
     margin-top: 20px; 
     padding: 15px 0; 
@@ -117,6 +116,7 @@
     background: linear-gradient(to right, transparent, #2D3748, transparent); 
     margin: 40px 0; 
 }
+
 .contenedor-navegacion { 
     display: flex; 
     justify-content: center; 
@@ -124,28 +124,6 @@
     margin-top: 50px; 
     border-top: 2px solid #1A1F24; 
     padding-top: 30px; 
-}
-
-@media (max-width: 768px) { /* Apila imagen y texto verticalmente y alinea a la izquierda */
-    .caja-detalle, .seccion-historia:nth-of-type(even) .caja-detalle { 
-        flex-direction: column; 
-        text-align: left; 
-    }
-
-    /* Imagen: ancho fluido, máximo 300px y margen inferior */
-    .img-historia { 
-        width: 100%; 
-        max-width: 300px; 
-        margin-bottom: 20px; 
-    }
-
-    /* Texto: unifica bordes y alineación (quita efecto zigzag) */
-    .texto-historia, .seccion-historia:nth-of-type(even) .texto-historia { 
-        border-right: none; 
-        border-left: 4px solid #00F5FF; 
-        padding: 0 0 0 20px; 
-        text-align: left; 
-    }
 }
 
 /* ========================================== RESPONSIVE MULTIDISPOSITIVO ========================================== */
@@ -156,27 +134,27 @@
         padding: 10px 0;
     }
     .nav-interna ul {
-        gap: 10px; /* Reduce espacio entre enlaces en pantallas medianas */
+        gap: 10px; 
     }
     .nav-interna a {
         font-size: 0.8rem;
     }
 
-    /* Apila imagen y texto verticalmente y alinea a la izquierda */
+    /* Apila imagen y texto verticalmente */
     .caja-detalle, .seccion-historia:nth-of-type(even) .caja-detalle { 
         flex-direction: column; 
         text-align: left; 
         gap: 20px;
     }
 
-    /* Imagen: centrada y fluida */
+    /* Imagen centrada */
     .img-historia { 
         width: 200px; 
-        height: 200px; /* Mantiene la proporción cuadrada */
+        height: 200px; 
         margin: 0 auto 10px auto; 
     }
 
-    /* Texto: unifica bordes y alineación (quita efecto zigzag) */
+    /* Quita el efecto zigzag del texto en móviles para que sea cómodo de leer */
     .texto-historia, .seccion-historia:nth-of-type(even) .texto-historia { 
         border-right: none; 
         border-left: 4px solid #00F5FF; 
@@ -185,10 +163,10 @@
     }
     
     .texto-historia p {
-        text-align: left; /* En pantallas pequeñas, el justificado deja huecos feos */
+        text-align: left; /* El texto justificado deja huecos blancos feos en móviles */
     }
 
-    /* Navegación inferior en móviles */
+    /* Botones inferiores apilados */
     .navegacion-historias {
         flex-direction: column;
         gap: 15px;
@@ -196,10 +174,11 @@
     }
 }
 
-@media (max-width: 414px) { /* Optimización estricta para teléfonos pequeños/medianos */
+@media (max-width: 414px) { 
+    /* El menú de historias se vuelve una cómoda cuadrícula de 2 columnas en celulares pequeños */
     .nav-interna ul {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Crea una cuadrícula de 2 columnas para los links */
+        grid-template-columns: repeat(2, 1fr); 
         text-align: center;
         gap: 8px;
     }
