@@ -177,7 +177,7 @@ footer {
     border-top: 1px solid #2D3748; /* Línea sutil de separación */
 }
 
-.boton-explorar, .boton-volver {
+.boton-explorar, .boton-volver{
     display: inline-block;
     background-color: #10B981; /* Verde esmeralda para acción */
     color: white;
@@ -198,13 +198,15 @@ footer {
 
 .boton-inicio {
     display: inline-block;
-    background-color: #2D3748; 
+    background-color: #2D3748;
     color: white;
     padding: 12px 30px;
-    border-radius: 5px;
-    text-decoration: none;
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Quita el subrayado */
     font-weight: bold;
-    transition: all 0.3s ease; /* Transición suave para el botón de inicio */
+    transition: all 0.3s ease; /* Transición suave para el hover */
+    margin-top: 15px;
+    border: 1px solid transparent;  
 }
 
 .boton-inicio:hover {

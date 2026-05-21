@@ -47,8 +47,8 @@
 .seccion-historia:nth-of-type(even) .caja-detalle { flex-direction: row-reverse; }
 
 .img-historia {
-    width: 300px; 
-    height: auto;
+    width: 250px; 
+    height: 250px;
     border-radius: 12px;
     border: 2px solid #2d3748;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
@@ -100,14 +100,14 @@
     border-top: 1px dashed #2D3748; 
 }
 
-.btn-anterior, .btn-siguiente { 
+.btn-anterior, .btn-siguiente, .link-subir { 
     text-decoration: none; 
     color: #CBD5E0; 
     font-size: 0.85rem; 
     transition: all 0.3s ease; 
 }
 
-.btn-anterior:hover, .btn-siguiente:hover { 
+.btn-anterior:hover, .btn-siguiente:hover, .link-subir:hover { 
     color: #00F5FF; 
 }
 
