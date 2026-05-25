@@ -266,9 +266,6 @@ audio {
     color: #1e79c4;
     background-color: #242424;
     border: 1px solid #4A4A4A;
-    hover {
-        opacity: 1;
-    }
    
 }
 

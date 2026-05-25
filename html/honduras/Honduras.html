@@ -10,6 +10,29 @@
 </head>
 <body>
 
+    <audio id="bgMusic" loop>
+  <source src="songs/The Lobotomy.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const music = document.getElementById('bgMusic');
+
+  // Restaurar tiempo guardado
+  const savedTime = localStorage.getItem('musicTime');
+  if (savedTime) music.currentTime = parseFloat(savedTime);
+
+  // Intentar reproducir automáticamente
+  music.play().catch(() => {
+    // Si el navegador bloquea autoplay, esperar interacción del usuario
+    document.addEventListener('click', () => music.play(), { once: true });
+  });
+
+  // Guardar tiempo cada segundo
+  setInterval(() => {
+    localStorage.setItem('musicTime', music.currentTime);
+  }, 1000);
+</script>
+
     <header class="encabezado-hero fondo-honduras">
         <div class="filtro-pantalla">
             <h1>Honduras</h1>
